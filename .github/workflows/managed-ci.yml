@@ -21,8 +21,8 @@ jobs:
             callable-ci.yml \
             --repo ${{ vars.FDE_GITHUB_APP_REPO_OWNER }}/${{ vars.FDE_GITHUB_APP_REPO_NAME }} \
             --ref pulumi-setup \
-            --field repository=${{ github.repository }} \
-            --field sha=${{ github.event.pull_request.head.sha }}
+            --field repository-owner=${{ github.repository_owner }} \
+            --field repository-name=${{ github.event.repository.name }} \
+            --field commit-sha=${{ github.event.pull_request.head.sha }}
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-
