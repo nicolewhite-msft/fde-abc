@@ -13,7 +13,7 @@ jobs:
           app-id: ${{ vars.FDE_GITHUB_APP_ID }}
           private-key: ${{ secrets.FDE_GITHUB_APP_PRIVATE_KEY }}
           owner: ${{ vars.FDE_GITHUB_APP_REPO_OWNER }}
-          repositories: ${{ vars.FDE_GITHUB_APP_REPO_OWNER }}/${{ vars.FDE_GITHUB_APP_REPO_NAME }}
+          repositories: ${{ vars.FDE_GITHUB_APP_REPO_NAME }}
 
       - run: |
           gh workflow run \
