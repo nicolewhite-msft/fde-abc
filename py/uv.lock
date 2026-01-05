@@ -4,9 +4,15 @@ requires-python = ">=3.12"
 
 [manifest]
 members = [
+    "lib-a",
     "ms-fde-root",
     "my-lib",
 ]
+
+[[package]]
+name = "lib-a"
+version = "0.0.0"
+source = { editable = "common/libs/lib-a" }
 
 [[package]]
 name = "ms-fde-root"
