@@ -1,0 +1,20 @@
+[project]
+name = "ms-fde-root"
+version = "0.0.0"
+description = "Microsoft FDE uv workspace root"
+requires-python = ">=3.12"
+
+[tool.uv]
+required-version = ">=0.9.0"
+
+[tool.uv.workspace]
+members = [
+    # common/
+    #   libs/
+    #   apps/
+    # <customer>/
+    #   libs/
+    #   apps/
+    "*/libs/*",
+    "*/apps/*",
+]

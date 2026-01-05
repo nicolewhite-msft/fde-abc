@@ -1,0 +1,19 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "ms-fde-root",
+    "my-lib",
+]
+
+[[package]]
+name = "ms-fde-root"
+version = "0.0.0"
+source = { virtual = "." }
+
+[[package]]
+name = "my-lib"
+version = "0.0.0"
+source = { editable = "abc/libs/my-lib" }
