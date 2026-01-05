@@ -1,0 +1,5 @@
+dependencies:
+  - repo: fde-common
+    path: py/common/libs/lib-a
+  - repo: fde-common
+    path: py/common/libs/lib-b
