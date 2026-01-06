@@ -12,10 +12,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Set up Python workspace
+      - name: Get Python version
+        id: version
+        run: |
+          language_version=$(yq '.default_language_version.python' < .pre-commit-config.yaml)
+
+          # Strip 'python' from language_version: 'python3.12' -> '3.12'
+          python_version=${language_version#"python"}
+
+          echo "python-version=$python_version" >> $GITHUB_OUTPUT
+
+      - name: Install Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: ${{ steps.version.outputs.python-version }}
 
       - name: Run pre-commit hooks
         uses: pre-commit/action@v3.0.1
