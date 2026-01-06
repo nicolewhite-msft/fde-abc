@@ -21,7 +21,7 @@ jobs:
           python_version=${language_version#"python"}
 
           echo "python-version=$python_version" >> $GITHUB_OUTPUT
-          
+
       - name: Install Python
         uses: actions/setup-python@v6
         with:
