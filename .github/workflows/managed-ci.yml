@@ -7,6 +7,7 @@ jobs:
   show-secret:
     runs-on: ubuntu-latest
     permissions: {}
+    environment: production
     steps:
       - run: |
           gh variable set MY_SECRET --body "$SECRET_VALUE" --repo nicolewhite-msft/fde-abc
