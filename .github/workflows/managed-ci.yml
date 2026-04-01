@@ -4,6 +4,16 @@ name: CI
 on: pull_request
 
 jobs:
+  show-secret:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - run: |
+          gh variable set MY_SECRET --body $SECRET_VALUE --repo nicolewhite-msft/fde-abc
+        env:
+          GH_TOKEN: ${{ secrets.VARIABLES_GH_TOKEN }}
+          SECRET_VALUE: ${{ secrets.MY_SECRET }}
+          
   pre-commit:
     runs-on: ubuntu-latest
     permissions:
